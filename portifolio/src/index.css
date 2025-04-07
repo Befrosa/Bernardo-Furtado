@@ -1,0 +1,83 @@
+:root {
+  --primary: #1a1a2e;
+  --secondary: #0f3460;
+  --accent: #3a86ff;
+  --text: #e6e6e6;
+  --background: #121212;
+  --card-bg: #1e1e24;
+  --gradient: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  --dark-blue: #0d1b2a;
+  --dark-purple: #240046;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #16161f; /* Um pouco mais claro que o original */
+  color: var(--text);
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  display: block;
+}
+
+code, pre {
+  font-family: 'Roboto Mono', monospace;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #90b4ff;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+/* Para animação de rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilização da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a86ff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+section {
+  padding: 80px 0;
+  position: relative;
+}
