@@ -6,14 +6,24 @@ import {
   FaReact, 
   FaNodeJs, 
   FaDocker, 
-  FaAws, 
   FaDatabase, 
-  FaPython, 
   FaJsSquare, 
   FaGitAlt,
-  FaCode
+  FaCode,
+  FaMicrosoft,
+  FaShareSquare
 } from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiPostgresql, SiGraphql, SiExpress, SiNextdotjs } from 'react-icons/si';
+import { 
+  SiTypescript, 
+  SiMongodb, 
+  SiPostgresql, 
+  SiPostman, 
+  SiFlutter, 
+  SiNextdotjs
+} from 'react-icons/si';
+import { DiPython } from 'react-icons/di';
+import { BsPower } from 'react-icons/bs';
+import { TbBrandCSharp } from 'react-icons/tb';
 
 const SkillsSection = styled.section`
   padding: 5rem 0;
@@ -162,18 +172,25 @@ const itemVariants = {
 // Dados das habilidades
 const skillsData = {
   frontend: [
-    { name: "React", icon: <FaReact />, level: 95 },
-    { name: "TypeScript", icon: <SiTypescript />, level: 90 },
-    { name: "JavaScript", icon: <FaJsSquare />, level: 95 },
-    { name: "Next.js", icon: <SiNextdotjs />, level: 85 },
-    { name: "HTML/CSS", icon: <FaCode />, level: 90 }
+    { name: "React", icon: <FaReact />, level: 100 },
+    { name: "SharePoint", icon: <FaShareSquare />, level: 100 },
+    { name: "TypeScript", icon: <SiTypescript />, level: 100 },
+    { name: "JavaScript", icon: <FaJsSquare />, level: 100 },
+    { name: "HTML/CSS", icon: <FaCode />, level: 100 },
+    { name: "React Mobile", icon: <FaReact />, level: 85 },
+    { name: "Flutter", icon: <SiFlutter />, level: 80 }
   ],
   backend: [
     { name: "Node.js", icon: <FaNodeJs />, level: 90 },
-    { name: "Express", icon: <SiExpress />, level: 85 },
-    { name: "Python", icon: <FaPython />, level: 80 },
-    { name: "GraphQL", icon: <SiGraphql />, level: 75 },
+    { name: "Python", icon: <DiPython />, level: 85 },
+    { name: "C#", icon: <TbBrandCSharp />, level: 85 },
     { name: "REST APIs", icon: <FaCode />, level: 90 }
+  ],
+  powerPlatform: [
+    { name: "Power Automate", icon: <BsPower />, level: 90 },
+    { name: "Power BI", icon: <BsPower />, level: 70 },
+    { name: "Power Apps", icon: <BsPower />, level: 60 },
+    { name: "Power Pages", icon: <FaMicrosoft />, level: 60 }
   ],
   database: [
     { name: "PostgreSQL", icon: <SiPostgresql />, level: 85 },
@@ -181,9 +198,9 @@ const skillsData = {
     { name: "SQL", icon: <FaDatabase />, level: 90 }
   ],
   devops: [
-    { name: "Docker", icon: <FaDocker />, level: 80 },
-    { name: "AWS", icon: <FaAws />, level: 75 },
-    { name: "Git", icon: <FaGitAlt />, level: 95 }
+    { name: "Docker", icon: <FaDocker />, level: 85 },
+    { name: "Postman", icon: <SiPostman />, level: 90 },
+    { name: "Git", icon: <FaGitAlt />, level: 100 }
   ]
 };
 
@@ -235,6 +252,27 @@ const Skills: React.FC = () => {
           <CategoryTitle variants={itemVariants}>Backend</CategoryTitle>
           <SkillsGrid>
             {skillsData.backend.map((skill, index) => (
+              <SkillCard key={index} variants={itemVariants}>
+                <SkillIcon>{skill.icon}</SkillIcon>
+                <SkillContent>
+                  <SkillTitle>{skill.name}</SkillTitle>
+                  <SkillLevel>
+                    <SkillProgress level={skill.level} />
+                  </SkillLevel>
+                </SkillContent>
+              </SkillCard>
+            ))}
+          </SkillsGrid>
+        </CategoryContainer>
+        
+        <CategoryContainer
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <CategoryTitle variants={itemVariants}>Power Platform</CategoryTitle>
+          <SkillsGrid>
+            {skillsData.powerPlatform.map((skill, index) => (
               <SkillCard key={index} variants={itemVariants}>
                 <SkillIcon>{skill.icon}</SkillIcon>
                 <SkillContent>

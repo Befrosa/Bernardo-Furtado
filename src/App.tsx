@@ -13,6 +13,7 @@ import Projects from './sections/Projects'
 import About from './sections/About'
 import Services from './sections/Services'
 import Skills from './sections/Skills'
+import Education from './sections/Education'
 import Contact from './sections/Contact'
 
 const Main = styled.main`
@@ -62,6 +63,7 @@ function App() {
         <About />
         <Services />
         <Skills />
+        <Education />
         <Contact />
       </Main>
       <Footer />
